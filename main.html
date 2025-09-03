@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Progress Bar</title>
-</head>
-<body>
-  <div class="container">
-    <div class="progress-container" id="progress-container">
-      <div id="progress"></div>
-
-      <!-- Required IDs and classes -->
-      <div class="circle active" id="circle-1">1</div>
-      <div class="circle" id="circle-2">2</div>
-      <div class="circle" id="circle-3">3</div>
-      <div class="circle" id="circle-4">4</div>
-      <div class="circle" id="circle-5">5</div>
-    </div>
-
-    <div class="btns">
-      <button id="prev" type="button" disabled aria-disabled="true">Previous</button>
-      <button id="next" type="button" aria-disabled="false">Next</button>
-    </div>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Progress Bar</title>
+	</head>
+	<body>
+		<!-- Progress Bar -->
+  <div class="progress-container">
+    <div id="progress"></div>
+    <div class="circle active" id="circle-1">1</div>
+    <div class="circle" id="circle-2">2</div>
+    <div class="circle" id="circle-3">3</div>
+    <div class="circle" id="circle-4">4</div>
+    <div class="circle" id="circle-5">5</div>
   </div>
-</body>
-</html>
+
+  <!-- Buttons -->
+  <div class="buttons">
+    <button id="prev" disabled>Previous</button>
+    <button id="next">Next</button>
+  </div>
+	</body>

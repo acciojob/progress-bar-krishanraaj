@@ -1,93 +1,97 @@
-*{
-	box-sizing: border-box;
+* {
+	box-sizing:border-box;
 }
 
- body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #f6f7fb;
-    }
-    .container { width: min(640px, 92vw); }
 
-    .progress-container {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+ body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
       align-items: center;
-      gap: 0;
-      margin: 24px 0 18px;
-      padding: 0 6px;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      background: #f2f2f2;
     }
-    /* Base (gray) line */
+
+    /* Container for the progress bar */
+    .progress-container {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 500px;
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+
+    /* Base line */
     .progress-container::before {
-      content: "";
+      content: '';
       position: absolute;
-      left: 6px;
-      right: 6px;
       top: 50%;
-      height: 4px;
-      background: var(--muted);
+      left: 0;
       transform: translateY(-50%);
-      border-radius: 2px;
+      background-color: #d3d3d3;
+      height: 4px;
+      width: 100%;
+      z-index: -1;
     }
-    /* Filled (blue) line */
+
+    /* Line that fills */
     #progress {
       position: absolute;
-      left: 6px;
       top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background-color: #3498db;
       height: 4px;
       width: 0%;
-      background: var(--active);
-      transform: translateY(-50%);
-      border-radius: 2px;
-      transition: width 0.25s ease;
+      z-index: -1;
+      transition: width 0.4s ease;
     }
 
+    /* Circles */
     .circle {
-      z-index: 1;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 3px solid var(--muted);
-      background: #fff;
+      background-color: #fff;
       color: #999;
-      display: grid;
-      place-items: center;
-      font-weight: 600;
-      transition: border-color 0.25s ease, color 0.25s ease, transform 0.05s;
-      user-select: none;
-    }
-    .circle.active {
-      border-color: var(--active);
-      color: var(--active);
-    }
-
-    .btns {
+      border: 3px solid #d3d3d3;
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
       display: flex;
-      gap: 10px;
+      align-items: center;
       justify-content: center;
-      margin-top: 8px;
-    }
-    button {
-      padding: 10px 18px;
-      font-size: 15px;
-      border: none;
-      border-radius: 8px;
-      background: var(--active);
-      color: #fff;
-      cursor: pointer;
-      transition: filter 0.2s ease, opacity 0.2s ease;
-    }
-    button:hover:not(:disabled) { filter: brightness(0.95); }
-    button:disabled {
-      background: #bfc7d1;
-      cursor: not-allowed;
-      opacity: 0.9;
+      transition: all 0.4s ease;
+      font-weight: bold;
     }
 
-    @media (max-width: 420px) {
-      .circle { width: 36px; height: 36px; }
+    .circle.active {
+      border-color: #3498db;
+      color: #3498db;
+    }
+
+    /* Buttons */
+    .buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:disabled {
+      background: #999;
+      cursor: not-allowed;
+    }
+
+    button:hover:enabled {
+      background: #217ab7;
     }

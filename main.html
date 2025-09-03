@@ -6,8 +6,10 @@
 </head>
 <body>
   <div class="container">
-    <div class="progress-container">
-      <div class="progress" id="progress"></div>
+    <div class="progress-container" id="progress-container">
+      <div id="progress"></div>
+
+      <!-- Required IDs and classes -->
       <div class="circle active" id="circle-1">1</div>
       <div class="circle" id="circle-2">2</div>
       <div class="circle" id="circle-3">3</div>
@@ -15,9 +17,9 @@
       <div class="circle" id="circle-5">5</div>
     </div>
 
-    <div class="btn-container">
-      <button id="prev" disabled>Previous</button>
-      <button id="next">Next</button>
+    <div class="btns">
+      <button id="prev" type="button" disabled aria-disabled="true">Previous</button>
+      <button id="next" type="button" aria-disabled="false">Next</button>
     </div>
   </div>
 </body>
